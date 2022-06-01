@@ -23,9 +23,13 @@ Kernel           : Linux 5.4.0-1069-gcp
 Architecture     : x86-64
 ```
 
-### Program
-Enqueue a node to the shared list (tail) multiple times.
-Dequeue the head from the shared list multiple times.
+### Program Logic
+0. Create threads (enqer)
+1. Enqueue a node to the shared list (tail) multiple times.
+2. Join threads (enqer)
+3. Create threads (deqer)
+4. Dequeue the head from the shared list multiple times.
+5. Join threads (deqer)
 
 ### How to run
 ```
