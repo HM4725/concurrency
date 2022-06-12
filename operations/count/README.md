@@ -1,18 +1,38 @@
-# How To Build
+# Count up
+## Models
+### 1. None
+- code: none.c
+- note: It doesn't guarantee the atomicity.
+### 2. Mutex
+- code: mutex.c
+- note: It uses a mutex for the atomicity.
+### 3. Atmoic
+- code: atomic.c
+- note: It uses the atomic instructions.
+### 4. Sloppy
+`TODO`
+
+# Evaluation
+## Environment
+```
+Cloud Environment: Google Cloud Platform
+Machine Type     : e2-medium (2 vCPUs)
+Virtualization   : kvm
+Operating System : Ubuntu 18.04.6 LTS
+Kernel           : Linux 5.4.0-1069-gcp
+Architecture     : x86-64
+```
+## How To Build
 ```
 make all
 ```
-
-# How To Run
+## How To Run
 ```
 time ./bin/none
 time ./bin/mutex
 time ./bin/atmoic
 ```
-
-# Evaluation
-## None
-### Result
+## Analysis: None
 ```
 Expect: 100000000
 Result: 66873597
@@ -22,9 +42,9 @@ Correct: no
 ### Correctness
 bad
 ### Performance
-good
+good (0.79s)
 
-## Mutex
+## Analysis: Mutex
 ### Result
 ```
 Expect: 100000000
@@ -35,9 +55,9 @@ Correct: yes
 ### Correctness
 good
 ### Performance
-bad
+bad (21.49s)
 
-## Atomic
+## Analysis: Atomic
 ### Result
 ```
 Expect: 100000000
@@ -48,4 +68,4 @@ Correct: yes
 ### Correctness
 good
 ### Performance
-good
+good (1.44s)
