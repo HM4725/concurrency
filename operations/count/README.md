@@ -34,60 +34,56 @@ make NTHRD={# of threads}
 ./bin/atomic
 ./bin/sloppy
 ```
-## Analysis: None
+## 1. Analysis: None
 ### Number of threads
 `2`
 ### Result
 ```
+Result : 69653626
 Expect : 100000000
-Result : 69529088
-Correct: no
-Time   : 0.862253s
+Time   : 0.863792s
 ```
 ### Correctness
 ☆☆☆☆☆
 ### Performance
 ★★★★★
 
-## Analysis: Mutex
+## 2. Analysis: Mutex
 ### Number of threads
 `2`
 ### Result
 ```
-Expect : 100000000
 Result : 100000000
-Correct: yes
-Time   : 27.242784s
+Expect : 100000000
+Time   : 27.735758s
 ```
 ### Correctness
 ★★★★★
 ### Performance
 ☆☆☆☆☆
 
-## Analysis: Atomic
+## 3. Analysis: Atomic
 ### Number of threads
 `2`
 ### Result
 ```
-Expect : 100000000
 Result : 100000000
-Correct: yes
-Time   : 1.526992s
+Expect : 100000000
+Time   : 1.520604s
 ```
 ### Correctness
 ★★★★★
 ### Performance
 ★★★★☆
 
-## Analysis: Sloopy
+## 4. Analysis: Sloopy
 ### Number of threads
 `2`
 ### Result
 ```
-Expect : 100000000
 Result : 100000000
-Correct: yes
-Time   : 5.779796s
+Expect : 100000000
+Time   : 5.860536s
 ```
 ### Correctness
 ★★★★★

@@ -35,9 +35,8 @@ int main(void) {
   }
   end = clock();
 
-  printf("Expect : %ld\n", expect);
   printf("Result : %ld\n", get(c));
-  printf("Correct: %s\n", expect == get(c) ? "yes" : "no");
+  printf("Expect : %ld\n", expect);
   printf("Time   : %lfs\n", (double)(end - start)/CLOCKS_PER_SEC);
 
   destroy(c);
