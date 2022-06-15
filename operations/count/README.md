@@ -10,7 +10,8 @@
 - code: atomic.c
 - note: It uses the atomic instructions.
 ### 4. Sloppy
-`TODO`
+- code: sloppy.c
+- note: It is the sloppy counter.
 
 # Evaluation
 ## Environment
@@ -28,44 +29,59 @@ make all
 ```
 ## How To Run
 ```
-time ./bin/none
-time ./bin/mutex
-time ./bin/atmoic
+./bin/none
+./bin/mutex
+./bin/atomic
+./bin/sloppy
 ```
 ## Analysis: None
 ```
-Expect: 100000000
-Result: 66873597
+Expect : 100000000
+Result : 68024745
 Correct: no
-./none  0.79s user 0.04s system 196% cpu 0.423 total
+Time   : 0.936555s
 ```
+
 ### Correctness
-bad
+☆☆☆☆☆
 ### Performance
-good (0.79s)
+★★★★★
 
 ## Analysis: Mutex
 ### Result
 ```
-Expect: 100000000
-Result: 100000000
+Expect : 100000000
+Result : 100000000
 Correct: yes
-./mutex  21.49s user 11.93s system 199% cpu 16.753 total
+Time   : 28.181607s
 ```
 ### Correctness
-good
+★★★★★
 ### Performance
-bad (21.49s)
+☆☆☆☆☆
 
 ## Analysis: Atomic
 ### Result
 ```
-Expect: 100000000
-Result: 100000000
+Expect : 100000000
+Result : 100000000
 Correct: yes
-./atomic  1.44s user 0.08s system 198% cpu 0.769 total
+Time   : 1.563816s
 ```
 ### Correctness
-good
+★★★★★
 ### Performance
-good (1.44s)
+★★★★☆
+
+## Analysis: Sloopy
+### Result
+```
+Expect : 100000000
+Result : 100000000
+Correct: yes
+Time   : 4.609518s
+```
+### Correctness
+★★★★★
+### Performance
+★★★☆☆

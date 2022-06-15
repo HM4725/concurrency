@@ -5,7 +5,7 @@ MAIN=main.c
 MKDIR=mkdir -p
 RM=rm -rf
 
-all: mkdir none mutex atomic
+all: mkdir none mutex atomic sloppy
 
 mkdir:
 	$(MKDIR) $(BIN)
@@ -17,6 +17,9 @@ mutex: mutex.c $(MAIN)
 	$(CC) $(OPTS) -o $(BIN)/$@ $^
 
 atomic: atomic.c $(MAIN)
+	$(CC) $(OPTS) -o $(BIN)/$@ $^
+
+sloppy: sloppy.c $(MAIN)
 	$(CC) $(OPTS) -o $(BIN)/$@ $^
 
 clean:
