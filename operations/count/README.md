@@ -25,7 +25,7 @@ Architecture     : x86-64
 ```
 ## How To Build
 ```
-make all
+make NTHRD={# of threads}
 ```
 ## How To Run
 ```
@@ -35,25 +35,29 @@ make all
 ./bin/sloppy
 ```
 ## Analysis: None
+### Number of threads
+`2`
+### Result
 ```
 Expect : 100000000
-Result : 68024745
+Result : 69529088
 Correct: no
-Time   : 0.936555s
+Time   : 0.862253s
 ```
-
 ### Correctness
 ☆☆☆☆☆
 ### Performance
 ★★★★★
 
 ## Analysis: Mutex
+### Number of threads
+`2`
 ### Result
 ```
 Expect : 100000000
 Result : 100000000
 Correct: yes
-Time   : 28.181607s
+Time   : 27.242784s
 ```
 ### Correctness
 ★★★★★
@@ -61,12 +65,14 @@ Time   : 28.181607s
 ☆☆☆☆☆
 
 ## Analysis: Atomic
+### Number of threads
+`2`
 ### Result
 ```
 Expect : 100000000
 Result : 100000000
 Correct: yes
-Time   : 1.563816s
+Time   : 1.526992s
 ```
 ### Correctness
 ★★★★★
@@ -74,12 +80,14 @@ Time   : 1.563816s
 ★★★★☆
 
 ## Analysis: Sloopy
+### Number of threads
+`2`
 ### Result
 ```
 Expect : 100000000
 Result : 100000000
 Correct: yes
-Time   : 4.609518s
+Time   : 5.779796s
 ```
 ### Correctness
 ★★★★★

@@ -4,6 +4,10 @@ BIN=./bin
 MAIN=main.c
 MKDIR=mkdir -p
 RM=rm -rf
+ifndef NTHRD
+NTHRD:=2
+endif
+OPTS+=-D NTHRD=$(NTHRD)
 
 all: mkdir none mutex atomic sloppy
 

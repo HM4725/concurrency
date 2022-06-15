@@ -4,13 +4,16 @@
 #include <time.h>
 #include "count.h"
 
-#define NTHRD (1000)
-#define REP (100000)
+#ifndef NTHRD
+#define NTHRD (2)
+#endif
+#define REP (100000000)
 
 counter_t *c;
 
 void* worker(void *arg) {
-  for(word_t i = 0; i < REP; i++)
+  word_t quota = REP / NTHRD;
+  for(word_t i = 0; i < quota; i++)
     increment(c, arg);
   return 0;
 }
@@ -18,7 +21,7 @@ void* worker(void *arg) {
 int main(void) {
   pthread_t thrd[NTHRD] = {0};
   word_t status;
-  word_t expect = NTHRD * REP;
+  word_t expect = REP;
   clock_t start, end;
 
   c = init((void*)NTHRD);
